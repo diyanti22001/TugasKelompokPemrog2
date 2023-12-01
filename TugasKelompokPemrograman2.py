@@ -118,14 +118,14 @@ class FilmReviewApp:
             self.load_reviews()
 
 if __name__ == "__main__":
-    # Membuat database dan tabel jika belum ada
+
     conn = sqlite3.connect("reviews.db")
     cursor = conn.cursor()
     cursor.execute("CREATE TABLE IF NOT EXISTS reviews (id INTEGER PRIMARY KEY, judul TEXT, ulasan TEXT, rating INTEGER)")
     conn.commit()
     conn.close()
 
-    # Menjalankan aplikasi Tkinter
+    
     root = tk.Tk()
     app = FilmReviewApp(root)
     root.mainloop()
